@@ -1,6 +1,6 @@
 
 
-## LANCE: Stress-testing Visual Models by Generating Language-guided Counterfactual Images
+## LANCE: Stress-testing Visual Models by Generating Language-guided Counterfactual Images (NeurIPS 2023)
 #### Viraj Prabhu, Sriram Yenamandra, Prithvijit Chattopadhyay, Judy Hoffman
 
 Project page: https://virajprabhu.com/lance-web/
