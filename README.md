@@ -52,7 +52,7 @@ df_cluster = lance.cluster_edits(df)
 plot_sensitivity(df_cluster, <model_name>, <cls_name>, x="Edit Type", y="Sensitivity", sort_by=[])
 ```
 
-And that's it! See [this notebook](https://github.com/virajprabhu/LANCE_release/blob/master/walkthrough.ipynb) for a detailed walkthrough for a real example.
+And that's it! See [this notebook](https://github.com/virajprabhu/LANCE/blob/master/walkthrough.ipynb) for a detailed walkthrough for a real example.
 
 #### Running LANCE at scale on a dataset
 
