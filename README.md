@@ -7,7 +7,7 @@
 
 [**Website**](https://virajprabhu.github.io/lance-web/)
 | [**News**](https://www.cc.gatech.edu/news/stress-test-method-detects-when-object-recognition-models-are-using-shortcuts)
-| [**Walkthrough**](https://github.com/virajprabhu/LANCE_release/blob/master/walkthrough.ipynb)
+| [**Walkthrough**](https://github.com/virajprabhu/LANCE/blob/master/walkthrough.ipynb)
 | [**Contributing**](CONTRIBUTING.md)
 | [**Paper**](https://huggingface.co/papers/2305.19164)
 

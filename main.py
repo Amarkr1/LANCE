@@ -23,6 +23,7 @@ import torch
 import torchvision.datasets as datasets
 
 from accelerate import Accelerator
+
 accelerator = Accelerator()
 from accelerate.logging import get_logger
 from lance.generate_captions import *
@@ -30,8 +31,8 @@ from lance.edit_captions import *
 from lance.edit_images import *
 from lance.utils.misc_utils import *
 
+
 def main(args: argparse.Namespace):
-    
     logging.info(accelerator.state, main_process_only=True)
     device = accelerator.device
     if args.verbose:
@@ -121,10 +122,11 @@ def main(args: argparse.Namespace):
     for paths, targets in dataloader:
         # Generate caption
         img_path, clsname = paths[0], targets[0]
-        if len(np.array(Image.open(img_path)).shape)<3: continue # Ignore grayscale images
+        if len(np.array(Image.open(img_path)).shape) < 3:
+            continue  # Ignore grayscale images
         out_dir = os.path.join(args.lance_path, args.exp_id, clsname.lower())
         os.makedirs(out_dir, exist_ok=True)
-        
+
         if args.verbose:
             logger.info(f"=>Generating LANCE for {img_path}")
 
@@ -153,9 +155,7 @@ def main(args: argparse.Namespace):
         out_path = os.path.join(out_dir, os.path.splitext(img_name)[0])
         if os.path.exists(out_path):
             if args.verbose:
-                logger.warning(
-                    f"=> Image `{out_path}' already edited, skipping"
-                )
+                logger.warning(f"=> Image `{out_path}' already edited, skipping")
             continue
 
         # Invert image
