@@ -455,6 +455,10 @@ def load_512(image_path, left=0, right=0, top=0, bottom=0):
         image = np.array(Image.open(image_path))
     else:
         image = image_path
+    # For handling grayscale images
+    if len(image.shape) == 2:
+        image = np.expand_dims(image, axis=-1)
+        image = np.repeat(image, 3, axis=-1)
     h, w, c = image.shape
     left = min(left, w - 1)
     right = min(right, w - left - 1)
