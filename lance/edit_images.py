@@ -369,19 +369,19 @@ if __name__ == "__main__":
     accelerator = Accelerator()
     VERBOSE = True
     if VERBOSE:
-        logger = get_logger()
+        logger = get_logger(__name__)
 
     image_editor = ImageEditor(
         args,
         device=accelerator.device,
-        similarity_threshold=0.5,
+        text_similarity_threshold=0.8, #text_similarity_threshold has to be increased to 0.8 from 0.5 for incorporating all the edits mentioned below
         ldm_type=args.ldm_type,
         verbose=VERBOSE,
         self_replace_steps_range=[0.5],
     )
     edit_path = os.path.join(args.out_path, "gnochi_mirror", "edited")
     os.makedirs(edit_path, exist_ok=True)
-    _, _, _, x_t, uncond_embeddings = image_editor.invert(
+    _, _, x_t, uncond_embeddings = image_editor.invert(
         args.image_path, args.original_caption, args.out_path
     )
 
